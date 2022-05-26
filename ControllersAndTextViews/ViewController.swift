@@ -51,6 +51,7 @@ class ViewController: UIViewController {
 			myButton.backgroundColor = .blue
 		}
 	}
+	
 	@IBAction func myPageControlAction(_ sender: Any) {
 		myPickerView.selectRow(myPageControl.currentPage, inComponent: 0, animated: true)
 		
@@ -59,13 +60,13 @@ class ViewController: UIViewController {
 	}
 }
 
-// UIPickerView DataSource & Delegate
+// Delegamos sobre ViewController los protocolos UIPickerView DataSource & Delegate
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 	// Nº de componentes o columnas
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
 		return 1
 	}
-// Nº de filas
+   // Nº de filas
 	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
 		return myPickerViewValues.count
 	}
