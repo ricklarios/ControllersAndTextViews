@@ -13,8 +13,9 @@ class ViewController: UIViewController {
 
 	@IBOutlet weak var myPickerView: UIPickerView!
 	@IBOutlet weak var myButton: UIButton!
-	
 	@IBOutlet weak var myPageControl: UIPageControl!
+	@IBOutlet weak var mySegmentedControl: UISegmentedControl!
+	
 	// Variables
 	
 	private let myPickerViewValues = ["Uno", "Dos", "Tres", "Cuatro", "Cinco"]
@@ -40,6 +41,13 @@ class ViewController: UIViewController {
 		myPageControl.numberOfPages = myPickerViewValues.count
 		myPageControl.currentPageIndicatorTintColor = .blue
 		myPageControl.pageIndicatorTintColor = .lightGray
+		
+		// Segmented Controls
+		
+		mySegmentedControl.removeAllSegments()
+		for (index, value) in myPickerViewValues.enumerated() {
+			mySegmentedControl.insertSegment(withTitle: value, at: index, animated: true)
+		}
 	}
 
 	// Actions
@@ -57,7 +65,19 @@ class ViewController: UIViewController {
 		
 		let myString = myPickerViewValues[myPageControl.currentPage]
 		myButton.setTitle(myString, for: .normal)
+		
+		mySegmentedControl.selectedSegmentIndex = myPageControl.currentPage
 	}
+	
+	@IBAction func mySegmentControlAction(_ sender: Any) {
+		myPickerView.selectRow(mySegmentedControl.selectedSegmentIndex, inComponent: 0, animated: true)
+		
+		let myString = myPickerViewValues[mySegmentedControl.selectedSegmentIndex]
+		myButton.setTitle(myString, for: .normal)
+		
+		myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
+	}
+	
 }
 
 // Delegamos sobre ViewController los protocolos UIPickerView DataSource & Delegate
@@ -79,6 +99,8 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 		myButton.setTitle(myString, for: .normal)
 		
 		myPageControl.currentPage = row
+		
+		mySegmentedControl.selectedSegmentIndex = row
 	}
 }
 
