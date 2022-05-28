@@ -70,10 +70,25 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7fB-MG-bQk">
                                 <rect key="frame" x="197" y="185" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seV-7e-w4P">
+                                <rect key="frame" x="274" y="422" width="120" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkX-T7-Xhh">
+                                <rect key="frame" x="251.5" y="474" width="142.5" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="seV-7e-w4P" firstAttribute="top" secondItem="Cdh-lf-woA" secondAttribute="bottom" constant="20" id="2Q8-35-6tc"/>
+                            <constraint firstItem="seV-7e-w4P" firstAttribute="centerY" secondItem="GZ9-TE-SMa" secondAttribute="centerY" id="2jN-dl-UBw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="seV-7e-w4P" secondAttribute="trailing" constant="20" id="7tA-gA-IUV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cdh-lf-woA" secondAttribute="trailing" constant="20" id="95l-oX-V4G"/>
                             <constraint firstItem="Cdh-lf-woA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Azy-rQ-McK"/>
                             <constraint firstItem="GZ9-TE-SMa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CBI-uk-HOX"/>
@@ -82,14 +97,19 @@
                             <constraint firstItem="5dp-SK-mBn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Go1-uO-S4s"/>
                             <constraint firstItem="2ch-cE-YqB" firstAttribute="top" secondItem="5dp-SK-mBn" secondAttribute="bottom" constant="20" id="IHq-JI-FlZ"/>
                             <constraint firstItem="Xgc-HO-MFs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IW5-qg-O9H"/>
+                            <constraint firstItem="seV-7e-w4P" firstAttribute="leading" secondItem="GZ9-TE-SMa" secondAttribute="trailing" constant="20" id="Ord-oq-E3P"/>
                             <constraint firstItem="uUl-gc-kM9" firstAttribute="top" secondItem="Xgc-HO-MFs" secondAttribute="bottom" constant="20" id="PYx-So-HFC"/>
                             <constraint firstItem="kZe-h0-5CJ" firstAttribute="top" secondItem="VrQ-a5-ghh" secondAttribute="bottom" constant="20" id="Psm-TA-0tg"/>
                             <constraint firstItem="Cdh-lf-woA" firstAttribute="top" secondItem="2ch-cE-YqB" secondAttribute="bottom" constant="20" id="PzB-oj-Gmj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uUl-gc-kM9" secondAttribute="trailing" constant="20" id="Q9S-3A-MYV"/>
+                            <constraint firstItem="SkX-T7-Xhh" firstAttribute="leading" secondItem="Xgc-HO-MFs" secondAttribute="trailing" constant="20" id="UOC-Ab-tmj"/>
                             <constraint firstItem="7fB-MG-bQk" firstAttribute="centerX" secondItem="kZe-h0-5CJ" secondAttribute="centerX" id="WEB-CP-yBZ"/>
                             <constraint firstItem="kZe-h0-5CJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wdq-os-NsD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SkX-T7-Xhh" secondAttribute="trailing" constant="20" id="cJG-p5-qqf"/>
+                            <constraint firstItem="SkX-T7-Xhh" firstAttribute="centerY" secondItem="Xgc-HO-MFs" secondAttribute="centerY" id="dCa-op-x9h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5dp-SK-mBn" secondAttribute="trailing" constant="20" id="eyh-0i-IG6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2ch-cE-YqB" secondAttribute="trailing" constant="20" id="gfF-fD-f18"/>
+                            <constraint firstItem="SkX-T7-Xhh" firstAttribute="top" secondItem="GZ9-TE-SMa" secondAttribute="bottom" constant="20" id="hvR-ad-gpe"/>
                             <constraint firstItem="VrQ-a5-ghh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hw4-NC-9g4"/>
                             <constraint firstItem="7fB-MG-bQk" firstAttribute="centerY" secondItem="kZe-h0-5CJ" secondAttribute="centerY" id="imq-zi-5f4"/>
                             <constraint firstItem="VrQ-a5-ghh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="jPA-10-LRm"/>
@@ -109,7 +129,9 @@
                         <outlet property="mySegmentedControl" destination="2ch-cE-YqB" id="qcR-m9-kow"/>
                         <outlet property="mySlider" destination="Cdh-lf-woA" id="utB-nL-FPV"/>
                         <outlet property="myStepper" destination="GZ9-TE-SMa" id="hkV-tY-ZSl"/>
+                        <outlet property="myStepperLabel" destination="seV-7e-w4P" id="GwC-cy-P1n"/>
                         <outlet property="mySwitch" destination="Xgc-HO-MFs" id="tfs-kI-nsr"/>
+                        <outlet property="mySwitchLabel" destination="SkX-T7-Xhh" id="YoC-dQ-6Ij"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

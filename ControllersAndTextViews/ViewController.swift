@@ -10,7 +10,8 @@ import UIKit
 class ViewController: UIViewController {
 	
 	// Outlets
-
+	
+	// Controllers
 	@IBOutlet weak var myPickerView: UIPickerView!
 	@IBOutlet weak var myButton: UIButton!
 	@IBOutlet weak var myPageControl: UIPageControl!
@@ -18,11 +19,14 @@ class ViewController: UIViewController {
 	@IBOutlet weak var mySlider: UISlider!
 	@IBOutlet weak var myStepper: UIStepper!
 	@IBOutlet weak var mySwitch: UISwitch!
+	// Indicators
 	@IBOutlet weak var myActivityIndicator: UIActivityIndicatorView!
 	@IBOutlet weak var myProgressView: UIProgressView!
+	// Labels
+	@IBOutlet weak var myStepperLabel: UILabel!
+	@IBOutlet weak var mySwitchLabel: UILabel!
 	
 	// Variables
-	
 	private let myPickerViewValues = ["Uno", "Dos", "Tres", "Cuatro", "Cinco"]
 	
 	
@@ -79,6 +83,14 @@ class ViewController: UIViewController {
 		myActivityIndicator.color = .blue
 		myActivityIndicator.startAnimating()
 		myActivityIndicator.hidesWhenStopped = true
+		
+		// Labels
+		
+		myStepperLabel.textColor = .darkGray
+		myStepperLabel.font = UIFont.boldSystemFont(ofSize: 36)
+		myStepperLabel.text = "1"
+		
+		mySwitchLabel.text = "Está apagado"
 		
 		}
 	
@@ -153,12 +165,14 @@ class ViewController: UIViewController {
 									
 	@IBAction func myStepperAction(_ sender: Any) {
 		let value = myStepper.value
+		
 		mySlider.value = Float(value)
 		myPageControl.currentPage = Int(value - 1)
 		mySegmentedControl.selectedSegmentIndex = Int(value - 1)
 		myPickerView.selectRow(Int(value - 1), inComponent: 0, animated: true)
 		let myString = myPickerViewValues[Int(value - 1)]
 		myButton.setTitle(myString, for: .normal)
+		myStepperLabel.text = "\(value)"
 		
 	}
 	
@@ -169,9 +183,11 @@ class ViewController: UIViewController {
 		if mySwitch.isOn {
 			myPickerView.isHidden = false
 			myActivityIndicator.stopAnimating()
+			mySwitchLabel.text = "Está encendido"
 		} else {
 			myPickerView.isHidden = true
 			myActivityIndicator.startAnimating()
+			mySwitchLabel.text = "Está apagado"
 		}
 	}
 	
