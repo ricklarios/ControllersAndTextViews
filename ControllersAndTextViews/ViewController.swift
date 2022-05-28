@@ -15,8 +15,9 @@ class ViewController: UIViewController {
 	@IBOutlet weak var myButton: UIButton!
 	@IBOutlet weak var myPageControl: UIPageControl!
 	@IBOutlet weak var mySegmentedControl: UISegmentedControl!
-	
 	@IBOutlet weak var mySlider: UISlider!
+	@IBOutlet weak var myStepper: UIStepper!
+	
 	// Variables
 	
 	private let myPickerViewValues = ["Uno", "Dos", "Tres", "Cuatro", "Cinco"]
@@ -56,8 +57,15 @@ class ViewController: UIViewController {
 		mySlider.minimumValue = 1
 		mySlider.maximumValue = Float(myPickerViewValues.count)
 		mySlider.value = 1
+	
+	
+	// Stepper
+	
+	myStepper.minimumValue = 1
+	myStepper.maximumValue = Double(myPickerViewValues.count)
+		
 	}
-
+	
 	// Actions
 	
 	// Buttom Actions
@@ -115,8 +123,20 @@ class ViewController: UIViewController {
 		myButton.setTitle(myString, for: .normal)
 		
 	}
-	
-	
+									
+	// Stepper Actions
+									
+	@IBAction func myStepperAction(_ sender: Any) {
+		let value = myStepper.value
+		mySlider.value = Float(value)
+		myPageControl.currentPage = Int(value - 1)
+		mySegmentedControl.selectedSegmentIndex = Int(value - 1)
+		myPickerView.selectRow(Int(value - 1), inComponent: 0, animated: true)
+		let myString = myPickerViewValues[Int(value - 1)]
+		myButton.setTitle(myString, for: .normal)
+		
+	}
+
 }
 
 // Delegamos sobre ViewController los protocolos UIPickerView DataSource & Delegate

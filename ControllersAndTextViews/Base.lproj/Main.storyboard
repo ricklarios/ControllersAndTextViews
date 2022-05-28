@@ -52,12 +52,20 @@
                                     <action selector="mySliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="w4d-KU-Cc5"/>
                                 </connections>
                             </slider>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="GZ9-TE-SMa">
+                                <rect key="frame" x="160" y="422" width="94" height="32"/>
+                                <connections>
+                                    <action selector="myStepperAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="XXR-uc-J44"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cdh-lf-woA" secondAttribute="trailing" constant="20" id="95l-oX-V4G"/>
                             <constraint firstItem="Cdh-lf-woA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Azy-rQ-McK"/>
+                            <constraint firstItem="GZ9-TE-SMa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CBI-uk-HOX"/>
+                            <constraint firstItem="GZ9-TE-SMa" firstAttribute="top" secondItem="Cdh-lf-woA" secondAttribute="bottom" constant="20" id="FKs-Ji-Bpr"/>
                             <constraint firstItem="5dp-SK-mBn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Go1-uO-S4s"/>
                             <constraint firstItem="2ch-cE-YqB" firstAttribute="top" secondItem="5dp-SK-mBn" secondAttribute="bottom" constant="20" id="IHq-JI-FlZ"/>
                             <constraint firstItem="kZe-h0-5CJ" firstAttribute="top" secondItem="VrQ-a5-ghh" secondAttribute="bottom" constant="20" id="Psm-TA-0tg"/>
@@ -79,6 +87,7 @@
                         <outlet property="myPickerView" destination="kZe-h0-5CJ" id="l07-G3-eur"/>
                         <outlet property="mySegmentedControl" destination="2ch-cE-YqB" id="qcR-m9-kow"/>
                         <outlet property="mySlider" destination="Cdh-lf-woA" id="utB-nL-FPV"/>
+                        <outlet property="myStepper" destination="GZ9-TE-SMa" id="hkV-tY-ZSl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
