@@ -58,6 +58,12 @@
                                     <action selector="myStepperAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="XXR-uc-J44"/>
                                 </connections>
                             </stepper>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xgc-HO-MFs">
+                                <rect key="frame" x="182.5" y="474" width="51" height="31"/>
+                                <connections>
+                                    <action selector="mySwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="8fH-AT-MX1"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -68,6 +74,7 @@
                             <constraint firstItem="GZ9-TE-SMa" firstAttribute="top" secondItem="Cdh-lf-woA" secondAttribute="bottom" constant="20" id="FKs-Ji-Bpr"/>
                             <constraint firstItem="5dp-SK-mBn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Go1-uO-S4s"/>
                             <constraint firstItem="2ch-cE-YqB" firstAttribute="top" secondItem="5dp-SK-mBn" secondAttribute="bottom" constant="20" id="IHq-JI-FlZ"/>
+                            <constraint firstItem="Xgc-HO-MFs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IW5-qg-O9H"/>
                             <constraint firstItem="kZe-h0-5CJ" firstAttribute="top" secondItem="VrQ-a5-ghh" secondAttribute="bottom" constant="20" id="Psm-TA-0tg"/>
                             <constraint firstItem="Cdh-lf-woA" firstAttribute="top" secondItem="2ch-cE-YqB" secondAttribute="bottom" constant="20" id="PzB-oj-Gmj"/>
                             <constraint firstItem="kZe-h0-5CJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wdq-os-NsD"/>
@@ -76,6 +83,7 @@
                             <constraint firstItem="VrQ-a5-ghh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hw4-NC-9g4"/>
                             <constraint firstItem="VrQ-a5-ghh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="jPA-10-LRm"/>
                             <constraint firstItem="5dp-SK-mBn" firstAttribute="top" secondItem="kZe-h0-5CJ" secondAttribute="bottom" constant="20" id="kIe-FD-bJX"/>
+                            <constraint firstItem="Xgc-HO-MFs" firstAttribute="top" secondItem="GZ9-TE-SMa" secondAttribute="bottom" constant="20" id="neW-ct-nYM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VrQ-a5-ghh" secondAttribute="trailing" constant="20" id="rcZ-lD-uIy"/>
                             <constraint firstItem="2ch-cE-YqB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vmM-85-jSg"/>
                             <constraint firstItem="kZe-h0-5CJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xQr-M6-1N4"/>
@@ -88,6 +96,7 @@
                         <outlet property="mySegmentedControl" destination="2ch-cE-YqB" id="qcR-m9-kow"/>
                         <outlet property="mySlider" destination="Cdh-lf-woA" id="utB-nL-FPV"/>
                         <outlet property="myStepper" destination="GZ9-TE-SMa" id="hkV-tY-ZSl"/>
+                        <outlet property="mySwitch" destination="Xgc-HO-MFs" id="tfs-kI-nsr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
