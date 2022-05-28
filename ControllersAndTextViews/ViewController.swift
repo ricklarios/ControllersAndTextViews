@@ -22,9 +22,11 @@ class ViewController: UIViewController {
 	// Indicators
 	@IBOutlet weak var myActivityIndicator: UIActivityIndicatorView!
 	@IBOutlet weak var myProgressView: UIProgressView!
-	// Labels
+	// Labels & Text
 	@IBOutlet weak var myStepperLabel: UILabel!
 	@IBOutlet weak var mySwitchLabel: UILabel!
+	@IBOutlet weak var myTextField: UITextField!
+	@IBOutlet weak var myTextView: UITextView!
 	
 	// Variables
 	private let myPickerViewValues = ["Uno", "Dos", "Tres", "Cuatro", "Cinco"]
@@ -92,6 +94,18 @@ class ViewController: UIViewController {
 		
 		mySwitchLabel.text = "Está apagado"
 		
+		// Text Field
+		
+		myTextField.textColor = .brown
+		myTextField.placeholder = "Escribe algo"
+		myTextField.delegate = self
+		
+		// TextView
+		
+		myTextView.textColor = .brown
+		// myTextView.isEditable = false
+		myTextView.delegate = self
+		
 		}
 	
 		
@@ -105,6 +119,7 @@ class ViewController: UIViewController {
 		} else {
 			myButton.backgroundColor = .blue
 		}
+		myTextView.resignFirstResponder() // En este caso el FirstResponder será el teclado del dispositivo -> hacemos que desaparezca con resign
 	}
 	
 	// PageControl Actions
@@ -221,5 +236,27 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 	}
 }
 
+
+extension ViewController: UITextFieldDelegate {
+	
+	// Al pulsar RETURN -> el teclado se cierra
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+	}
+	
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		myButton.setTitle(myTextField.text, for: .normal)
+	}
+}
+
+extension ViewController: UITextViewDelegate {
+	
+	func textViewDidBeginEditing(_ textView: UITextView) {
+		myTextField.isHidden = true
+		}
+	func textViewDidEndEditing(_ textView: UITextView) {
+		myTextField.isHidden = false
+	}
+}
 
 
