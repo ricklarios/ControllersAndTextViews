@@ -18,6 +18,8 @@ class ViewController: UIViewController {
 	@IBOutlet weak var mySlider: UISlider!
 	@IBOutlet weak var myStepper: UIStepper!
 	@IBOutlet weak var mySwitch: UISwitch!
+	@IBOutlet weak var myActivityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var myProgressView: UIProgressView!
 	
 	// Variables
 	
@@ -70,6 +72,14 @@ class ViewController: UIViewController {
 		mySwitch.onTintColor = .purple
 		mySwitch.isOn = false
 		
+		// Progress Indicators
+		
+		myProgressView.progress = 0
+		
+		myActivityIndicator.color = .blue
+		myActivityIndicator.startAnimating()
+		myActivityIndicator.hidesWhenStopped = true
+		
 		}
 	
 		
@@ -112,23 +122,30 @@ class ViewController: UIViewController {
 	@IBAction func mySliderAction(_ sender: Any) {
 		
 		// print(mySlider.value)
+		var progress: Float = 0
 		
 		switch mySlider.value {
 		case 1..<2:
 			mySegmentedControl.selectedSegmentIndex = 0
+			progress = 0.2
 		case 2..<3:
 			mySegmentedControl.selectedSegmentIndex = 1
+			progress = 0.4
 		case 3..<4:
 			mySegmentedControl.selectedSegmentIndex = 2
+			progress = 0.6
 		case 4..<5:
 			mySegmentedControl.selectedSegmentIndex = 3
+			progress = 0.8
 		default:
 			mySegmentedControl.selectedSegmentIndex = 4
+			progress = 1
 		}
 		myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
 		myPickerView.selectRow(mySegmentedControl.selectedSegmentIndex, inComponent: 0, animated: true)
 		let myString = myPickerViewValues[mySegmentedControl.selectedSegmentIndex]
 		myButton.setTitle(myString, for: .normal)
+		myProgressView.progress = progress
 		
 	}
 									
@@ -151,8 +168,10 @@ class ViewController: UIViewController {
 		
 		if mySwitch.isOn {
 			myPickerView.isHidden = false
+			myActivityIndicator.stopAnimating()
 		} else {
 			myPickerView.isHidden = true
+			myActivityIndicator.startAnimating()
 		}
 	}
 	
